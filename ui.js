@@ -3,6 +3,7 @@ class UI {
         this.profile = document.querySelector("#profile");
     };
 
+    // Display Profile
     showProfile(user) {
         this.profile.innerHTML = `
             <div class="card card-body mb-3">
@@ -40,4 +41,40 @@ class UI {
         `;
     };
 
+    // Show Alert message
+    showAlert(message, className) {
+        // Clear alerts
+        this.clearAlert();
+
+        // create div element
+        const div = document.createElement("div");
+        div.className = className;
+        div.appendChild(document.createTextNode(message));
+        // Get Parent
+        const container = document.querySelector(".searchContainer");
+        // Get search box
+        const search = document.querySelector(".search");
+        // Insert alert
+        container.insertBefore(div, search);
+
+        //Timeout after three seconds
+        setTimeout(() => {
+            this.clearAlert();
+        }, 3000);
+
+    };
+
+    clearAlert() {
+        const currentAlert = document.querySelector(".alert");
+
+        if (currentAlert) {
+            currentAlert.remove();
+        };
+    }
+
+
+    // Clear profile
+    clearProfile() {
+        this.profile.innerHTML = "";
+    }
 };

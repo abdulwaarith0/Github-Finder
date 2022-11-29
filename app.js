@@ -14,6 +14,7 @@ const searchUser = document.querySelector("#searchUser").addEventListener("keyup
             .then(data => {
                 if (data.profile.message === "Not Found") {
                     // show alert
+                    ui.showAlert("User not found", "alert alert-danger");
                 } else {
                     // show profile 
                     ui.showProfile(data.profile);
@@ -21,7 +22,7 @@ const searchUser = document.querySelector("#searchUser").addEventListener("keyup
             });
     } else {
         // clear profile
-
+        ui.clearProfile();
     }
 });
 
