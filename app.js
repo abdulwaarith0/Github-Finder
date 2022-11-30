@@ -18,6 +18,7 @@ const searchUser = document.querySelector("#searchUser").addEventListener("keyup
                 } else {
                     // show profile 
                     ui.showProfile(data.profile);
+                    ui.showRepos(data.repos);
                 }
             });
     } else {

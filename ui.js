@@ -37,9 +37,43 @@ class UI {
             </div>
 
             <h3 class="page-heading mb-3">Latest Repos</h3>
-            <div id=
+            <div id=repos></div>
         `;
     };
+
+    // Show User Repos
+    showRepos(repos) {
+        let output = "";
+
+        repos.forEach(function (repo) {
+            output += `
+            <div class= "card card-body mb-2">
+                <div class= "row">
+                    <div class= "col-md-6">
+                        <a href="${repo.html_url}" target= "_blank">${repo.name}</a>
+                    </div>
+                    <div class= "col-md-6">
+                        <span class="badge badge-primary m-2">
+                        Stars: ${repo.stargazers_count}
+                        </span>
+                        <span class="badge badge-secondary m-2">
+                        Watchers: ${repo.watchers_count}
+                        </span>
+                        <span class="badge badge-primary m-2">
+                        Fork: ${repo.forms_count}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            `
+        });
+
+        // Output Repos
+        document.getElementById("repos").innerHTML = output;
+
+
+    }
+
 
     // Show Alert message
     showAlert(message, className) {
