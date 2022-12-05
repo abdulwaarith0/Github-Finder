@@ -60,7 +60,7 @@ class UI {
                         Watchers: ${repo.watchers_count}
                         </span>
                         <span class="badge badge-primary m-2">
-                        Fork: ${repo.forms_count}
+                        Fork: ${repo.forks_count}
                         </span>
                     </div>
                 </div>
